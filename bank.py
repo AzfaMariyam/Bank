@@ -10,7 +10,7 @@ import pickle
 import os
 import base64
 
-
+@st.cache(persist=True)
 #load models
 #1. FOR BANK DEPOSIT PREDICTION
 #random forest classifier
@@ -345,7 +345,7 @@ def main():
             data['day'] = pd.to_datetime(data['day'])
             return data
 
-        data = load_data()
+        #data = load_data()
         # st.write(data)
 
         st.sidebar.subheader("Bank Markerting Data Analysis")
